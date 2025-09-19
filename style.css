@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cinzel Decorative", serif;
+  font-size: clamp(8px, 0.1vw, 20px);
+
+  text-align: center;
+  text-shadow: 0 0.2rem 0.2rem rgba(36, 0, 0, 0.25);
+}
+
+body {
+  display: flex;
+  background-color: #3f3b2e;
+  /* overflow-x: hidden; */
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  z-index: -1;
+  background-image: url("images/background/background-base.png");
+  background-position: center;
+  background-size: cover;
+  transition: all 0.1s;
+  opacity: 1;
+}
+
+.background.fade-out {
+  opacity: 0;
+}
+
+div {
+  display: flex;
+}
+
+main {
+  display: flex;
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.parchment {
+  display: flex;
+
+  background: url("images/parchment-texture.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 2rem rgb(50, 29, 0));
+}
+
+.generator {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  align-content: center;
+  /* justify-content: center; */
+  padding: 10%;
+  max-width: 800px;
+  width: 100%;
+  max-height: 97dvh;
+}
+
+.choixRace,
+.choixgenre,
+.generateBtn {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  justify-content: center;
+}
+
+hr {
+  width: 80%;
+  height: 1px;
+  min-height: 1px;
+  background: linear-gradient(to right, #bf7214ca, #583400, #bf7214ca);
+  border: none;
+}
+
+.raceBtn,
+.genreBtn {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Textes */
+
+h1 {
+  font-size: 5.5rem;
+  line-height: 6rem;
+  color: #321d00;
+  /* margin-bottom: 3rem; */
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #2a2002;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 3rem;
+  color: #2a0000;
+  margin-bottom: 2rem;
+  font-family: "Merriweather", serif;
+}
+.yourName p {
+  font-size: 3rem;
+  font-family: "Cinzel Decorative", serif;
+}
+
+.picto {
+  height: 7rem;
+  align-items: bottom;
+}
+/* Bouttons */
+
+button {
+  display: flex;
+  align-items: center;
+  background-color: rgb(63, 40, 4);
+  color: #f3ddb6;
+  box-shadow: 2rem 1rem 0 0 0 #321d00;
+  justify-content: center;
+  padding: 1.7rem 2.7rem;
+  border-radius: 0.6rem;
+  border: 0.25rem solid black;
+  font-size: 2.5rem;
+  font-family: "Merriweather", serif;
+  box-shadow: 0 0px 1rem rgba(50, 29, 0, 0.478), inset 2px 2px 0 #624b27, inset -2px -2px 0 #624b27, inset -3px -3px 0 #2f1906, inset 3px 3px 0 #2f1906, 0 0 0 0.3rem #9d7a28;
+}
+
+button:hover {
+  background-color: #552a03;
+  cursor: pointer;
+  /* color: rgb(255, 234, 163); */
+  scale: 1.05;
+  box-shadow: 0 0px 1rem rgba(50, 29, 0, 0.478), inset 2px 2px 0 #624b27, inset -2px -2px 0 #624b27, inset -3px -3px 0 #2f1906, inset 3px 3px 0 #2f1906, 0 0 0 0.2rem #9d7a28;
+}
+.raceBtn button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-width: 12rem;
+}
+
+.raceBtn button.active,
+.genreBtn button.active {
+  justify-content: center;
+  align-items: center;
+  background-color: #552a03;
+  color: bisque;
+}
+
+.genreIcon {
+  font-size: 3rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bolder;
+  padding: 0 1.5rem 0 0;
+}
+
+.generateBtn button {
+  display: flex;
+  padding: 3rem 7rem;
+  background: linear-gradient(to bottom, #704521, #4e2d10);
+  color: bisque;
+  font-family: "Cinzel Decorative", serif;
+  font-size: 3rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  box-shadow: 0 10px 1rem rgba(50, 29, 0, 0.197), inset 2px 2px 0 #624b27, inset -2px -2px 0 #624b27, inset -3px -3px 0 #2f1906, inset 3px 3px 0 #2f1906, 0 0 0 0.3rem #9d7a28;
+}
+
+.generateBtn button:hover {
+  background: linear-gradient(to bottom right, #532a10, #341806);
+  color: rgb(255, 211, 135);
+  font-weight: bold;
+  scale: 1.05;
+  box-shadow: 0 10px 1rem rgba(50, 29, 0, 0.197), inset 2px 2px 0 #624b27, inset -2px -2px 0 #624b27, inset -3px -3px 0 #2f1906, inset 3px 3px 0 #2f1906, 0 0 0 0.2rem #9d7a28;
+}
+
+.generateBtn button:disabled,
+.generateBtn button.disabled {
+  background: #afafaf !important;
+  color: #8f8f8f !important;
+  cursor: not-allowed !important;
+  border-color: rgb(73, 73, 73);
+  opacity: 0.7;
+  text-transform: none;
+  box-shadow: 0 10px 1rem rgba(68, 68, 68, 0.197), inset 2px 2px 0 #4e4e4e00, inset -2px -2px 0 #666666, inset -3px -3px 0 #6a6a6a, inset 3px 3px 0 #747474;
+  scale: 1;
+}
+
+/* bouton musique */
+
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #704521;
+  color: bisque;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0px 1rem rgba(50, 29, 0, 0.478);
+}
+
+.music-toggle:hover {
+  background-color: #552a03;
+}
+
+@media (max-height: 900px) {
+  /* html {
+    font-size: clamp(7px, 1vw, 20px);
+  } */
+
+  body,
+  main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0;
+  }
+
+  .parchment {
+    display: flex;
+    background: url("images/parchment-texture.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 10rem;
+    max-width: none;
+    max-height: none;
+  }
+  h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: clamp(8px, 1.4vw, 20px);
+  }
+
+  body,
+  main {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  main {
+    padding: 1.2rem;
+  }
+
+  .parchment {
+    background: url("images/parchment-texture-mb.png");
+    background-position: top;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    padding: 5rem 3rem;
+    max-width: none;
+    max-height: none;
+    opacity: 0.85;
+  }
+
+  .generator {
+    padding: 15% 5%;
+    max-height: 100%;
+  }
+
+  .raceBtn button {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 16rem;
+    height: 18rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  .genreBtn button {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .generateBtn button {
+    font-size: 2.8rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+    line-height: 5rem;
+    color: #321d00;
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+    color: #2a2002;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    color: #2a0000;
+    margin-bottom: 2rem;
+    font-family: "Merriweather", serif;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: only light;
+  }
+}
