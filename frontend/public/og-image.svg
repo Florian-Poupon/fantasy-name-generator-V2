@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1b0f13" />
+      <stop offset="100%" stop-color="#3b231b" />
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="rgba(255,210,150,0.45)" />
+      <stop offset="100%" stop-color="rgba(27,15,19,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect width="1200" height="630" fill="url(#glow)" />
+  <g font-family="'Cinzel', 'Times New Roman', serif" text-anchor="middle" fill="#f7e8d5">
+    <text x="600" y="240" font-size="82">Forge de Noms Fantastiques</text>
+    <text x="600" y="330" font-size="36" fill="#ffd86b">Générez, sauvegardez et partagez vos identités épiques</text>
+  </g>
+  <g fill="none" stroke="#ffd86b" stroke-width="6" opacity="0.55">
+    <path d="M160 470h880" stroke-linecap="round" />
+    <path d="M240 430l60-90 120 120 140-160 180 160 120-130 60 90" stroke-linejoin="round" />
+  </g>
+</svg>
