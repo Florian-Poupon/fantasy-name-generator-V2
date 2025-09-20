@@ -45,12 +45,8 @@ genreClic.forEach((button) => {
       const race = img.closest("button")?.getAttribute("data-race");
       if (!race) return;
 
-      // choisir l'image selon le genre sélectionné
-      if (genre === "masculin") {
-        img.src = `images/picto/${race}.png`;
-      } else {
-        img.src = `images/picto/${race}-feminin.png`;
-      }
+      const suffix = genre === "feminin" ? "-feminin" : "";
+      img.src = `images/picto/${race}${suffix}.png`;
     });
     updateGenerateBtnState();
   });
@@ -88,36 +84,46 @@ function generateName() {
   if (raceData === "humain") {
     if (genreData === "masculin") {
       nom = randomNbr(prefixesHumainMasculin) + randomNbr(suffixesHumainMasculin);
-    } else {
+    } else if (genreData === "feminin") {
       nom = randomNbr(prefixesHumainFeminin) + randomNbr(suffixesHumainFeminin);
+    } else if (genreData === "non-binaire") {
+      nom = randomNbr(prefixesHumainNonBinaire) + randomNbr(suffixesHumainNonBinaire);
     }
   }
   if (raceData === "elfe") {
     if (genreData === "masculin") {
       nom = randomNbr(prefixesElfeMasculin) + randomNbr(suffixesElfeMasculin);
-    } else {
+    } else if (genreData === "feminin") {
       nom = randomNbr(prefixesElfeFeminin) + randomNbr(suffixesElfeFeminin);
+    } else if (genreData === "non-binaire") {
+      nom = randomNbr(prefixesElfeNonBinaire) + randomNbr(suffixesElfeNonBinaire);
     }
   }
   if (raceData === "nain") {
     if (genreData === "masculin") {
       nom = randomNbr(prefixesNainMasculin) + randomNbr(suffixesNainMasculin);
-    } else {
+    } else if (genreData === "feminin") {
       nom = randomNbr(prefixesNainFeminin) + randomNbr(suffixesNainFeminin);
+    } else if (genreData === "non-binaire") {
+      nom = randomNbr(prefixesNainNonBinaire) + randomNbr(suffixesNainNonBinaire);
     }
   }
   if (raceData === "gnome") {
     if (genreData === "masculin") {
       nom = randomNbr(prefixesGnomeMasculin) + randomNbr(suffixesGnomeMasculin);
-    } else {
+    } else if (genreData === "feminin") {
       nom = randomNbr(prefixesGnomeFeminin) + randomNbr(suffixesGnomeFeminin);
+    } else if (genreData === "non-binaire") {
+      nom = randomNbr(prefixesGnomeNonBinaire) + randomNbr(suffixesGnomeNonBinaire);
     }
   }
   if (raceData === "orc") {
     if (genreData === "masculin") {
       nom = randomNbr(prefixesOrcMasculin) + randomNbr(suffixesOrcMasculin);
-    } else {
+    } else if (genreData === "feminin") {
       nom = randomNbr(prefixesOrcFeminin) + randomNbr(suffixesOrcFeminin);
+    } else if (genreData === "non-binaire") {
+      nom = randomNbr(prefixesOrcNonBinaire) + randomNbr(suffixesOrcNonBinaire);
     }
   }
   return nom;
