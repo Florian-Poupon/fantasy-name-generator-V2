@@ -62,15 +62,32 @@
             <div class="genreBtn">
               <button id="masculin" data-genre="masculin"><span class="genreIcon">♂</span> Masculin</button>
               <button id="feminin" data-genre="feminin"><span class="genreIcon">♀</span> Féminin</button>
+              <button id="non-binaire" data-genre="non-binaire">
+                <span class="genreIcon">⚧</span> Non-binaire
+              </button>
             </div>
           </div>
           <hr />
           <div class="generateBtn">
-            <div class="yourName">
-              <p></p>
+            <div
+              class="yourName"
+              aria-live="polite"
+              aria-atomic="true"
+              data-name-output
+            >
+              <p class="empty-state" data-empty-recent>
+                Forgez un nom pour afficher vos dernières créations.
+              </p>
+              <ul class="name-list" data-name-list></ul>
             </div>
-            <button>Forger votre nom</button>
+            <button type="button">Forger votre nom</button>
           </div>
+          <div class="favorites" aria-live="polite" aria-atomic="true">
+            <h2>Noms favoris</h2>
+            <p class="empty-state" data-empty-favorites>Aucun nom favori pour le moment.</p>
+            <ul class="name-list" data-favorite-list></ul>
+          </div>
+          <p class="status-message" role="status" aria-live="polite" data-status></p>
         </div>
       </div>
       <!-- Fin du Générateur -->
